@@ -1,0 +1,771 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+/* ===== NAVBAR ===== */
+header {
+  background: #fff;
+  padding: 15px 40px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+/* Efek navbar saat di-scroll (ditambahkan via JS) */
+header.scrolled {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  background: #ffffffee;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: red;
+}
+
+/* Menu aktif (ditambahkan via JS saat diklik) */
+nav ul li a.active {
+  color: red;
+  font-weight: bold;
+  border-bottom: 2px solid red;
+  padding-bottom: 2px;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  position: relative;
+  height: 90vh;
+  background: url('https://kci.id/app/sam/assets/home/9849a56f6082de47887b618e564abdac.png') no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(255,255,255,0.2));
+}
+
+/* Animasi hero content (ditrigger via JS saat load) */
+.hero-content {
+  position: relative;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-content h3 {
+  color: #ff3b3b;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.hero-content h1 {
+  font-size: 60px;
+  color: red;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn span {
+  background: #2c3e50;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/* ===== APP DOWNLOAD SECTION ===== */
+.app-section {
+  position: relative;
+  background: #f0f0f0;
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+}
+
+.app-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: url('https://kci.id/app/sam/assets/home/9849a56f6082de47887b618e564abdac.png') no-repeat right center / 65%;
+  opacity: 0.12;
+  z-index: 0;
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.app-text {
+  flex: 0 0 45%;
+  max-width: 45%;
+}
+
+.app-label {
+  color: #cc0000;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.app-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
+
+.google-play-btn {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.google-play-btn img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+/* Right: Mockup */
+.app-mockup {
+  flex: 0 0 50%;
+  max-width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 380px;
+}
+
+.circle-bg {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #1a2a6c;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.mockup-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+}
+
+/* ===== C-CORNER SECTION ===== */
+.ccorner-section {
+  background: #fff;
+  padding: 60px 0 70px;
+}
+
+.ccorner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.ccorner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.ccorner-label {
+  color: #cc0000;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ccorner-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111;
+}
+
+.ccorner-lihat-semua {
+  text-decoration: none;
+  color: #cc0000;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-top: 4px;
+}
+
+.ccorner-lihat-semua:hover {
+  text-decoration: underline;
+}
+
+/* Wrapper abu-abu */
+.ccorner-wrapper {
+  background: #f2f2f2;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tombol panah */
+.ccorner-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ctrl-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid #999;
+  background: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  transition: 0.2s;
+}
+
+.ctrl-btn:hover {
+  background: #cc0000;
+  color: #fff;
+  border-color: #cc0000;
+}
+
+/* Slider track */
+.ccorner-track {
+  margin-left: 5px;
+  display: flex;
+  gap: 20px;
+  padding-left: 10px;
+  will-change: transform;
+}
+
+/* Card produk */
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  flex: 0 0 calc(25% - 15px);
+  min-width: calc(25% - 15px);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-img-wrap {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.product-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+  line-height: 1.4;
+}
+
+.product-price {
+  font-size: 12px;
+  font-weight: 700;
+  color: #111;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.price-icon {
+  background: #cc0000;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* Tombol Lihat Produk */
+.product-btn {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  background: #cc0000;
+  color: #fff;
+  margin-top: auto;
+  transition: background 0.3s;
+}
+
+/* Hover: berubah ke biru sesuai referensi */
+.product-btn:hover {
+  background: #1a3a8c;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #FF0000;
+  color: #fff;
+  position: relative;
+  padding-top: 60px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px 40px;
+  display: flex;
+  gap: 40px;
+  text-align: left;
+  align-items: flex-start;
+}
+
+/* Kolom Logo */
+.footer-logo {
+  flex: 0 0 130px;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.footer-logo img {
+  width: 110px;
+  height: auto;
+}
+
+/* Kolom Kontak */
+.footer-contact {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.footer-address {
+  margin-bottom: 4px;
+  line-height: 1.6;
+}
+
+.footer-icon {
+  margin-right: 6px;
+}
+
+/* Kolom Menu */
+.footer-menu {
+  flex: 1;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.footer-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.footer-menu ul li a:hover {
+  opacity: 0.75;
+}
+
+/* Kolom App */
+.footer-app {
+  flex: 0 0 140px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.footer-app-label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.footer-google-play img {
+  height: 38px;
+  width: auto;
+}
+
+/* Copyright bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  text-align: left;
+  padding: 16px 40px;
+  font-size: 13px;
+  max-width: 100%;
+}
+
+/* ===== SCROLL TO TOP BUTTON ===== */
+.scroll-top-btn {
+  position: absolute;
+  top: -22px;
+  right: 40px;
+  width: 44px;
+  height: 44px;
+  background: #1a2a6c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 26px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.2s;
+  line-height: 1;
+}
+
+.scroll-top-btn:hover {
+  background: #0f1f55;
+  transform: translateY(-3px);
+}
+
+/* ============================= */
+/* RESPONSIVE TABLET */
+/* ============================= */
+@media (max-width: 1024px) {
+
+  header {
+    padding: 15px 20px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 0 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  /* App Section */
+  .app-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 30px;
+  }
+
+  .app-text,
+  .app-mockup {
+    max-width: 100%;
+    flex: 1;
+  }
+
+  .circle-bg {
+    width: 240px;
+    height: 240px;
+  }
+
+  /* Product card jadi 2 kolom */
+  .product-card {
+    flex: 0 0 calc(50% - 10px);
+    min-width: calc(50% - 10px);
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-wrap: wrap;
+  }
+
+  .footer-app {
+    align-items: flex-start;
+  }
+
+}
+
+/* ============================= */
+/* RESPONSIVE MOBILE */
+/* ============================= */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 13px;
+  }
+
+  /* Hero */
+  .hero {
+    height: auto;
+    padding: 80px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  /* App Section */
+  .app-container {
+    padding: 50px 20px;
+  }
+
+  .app-title {
+    font-size: 22px;
+  }
+
+  .mockup-img {
+    max-width: 260px;
+  }
+
+  .app-container {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .app-text {
+    max-width: 100%;
+  }
+
+  .app-title {
+    font-size: 24px;
+  }
+
+  .app-mockup {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .circle-bg {
+    width: 220px;
+    height: 220px;
+  }
+
+  .mockup-img {
+    max-width: 300px;
+  }
+
+  /* C-Corner */
+  .ccorner-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ccorner-title {
+    font-size: 20px;
+  }
+
+  .product-card {
+    flex: 0 0 80%;
+    min-width: 80%;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-logo img {
+    width: 90px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-app {
+    align-items: flex-start;
+    text-align: center;
+    align-items: center;
+  }
+
+  .scroll-top-btn {
+    right: 20px;
+  }
+
+}
+
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Tombol close */
+.close-btn {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 28px;
+  cursor: pointer;
+  color: red;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* NAV JADI FULLSCREEN */
+  nav {
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateY(-100%);
+    transition: 0.4s;
+    z-index: 999;
+  }
+
+  nav.active {
+    transform: translateY(0);
+  }
+
+  /* close button muncul */
+  .close-btn {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #999;
+    padding-bottom: 10px;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+    color: #333;
+  }
+}
+
