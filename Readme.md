@@ -16,7 +16,7 @@ WEB ini merupakan percobaan slicing web KAI Commuter menggunakan HTML, CSS dan J
 # SCREENSHOT
 <p align="center">
   <img src="Assets/landing page.png" width="30%" align="top" />
-  <img src="app mockup.png" width="20%" align="top" />
+  <img src="Assets/app mockup.png" width="20%" align="top" />
   <img src="Assets/c-corner.png" width="20%" align="top" />
   <img src="Assets/footer.png" width="20%" align="top" />
 </p>
