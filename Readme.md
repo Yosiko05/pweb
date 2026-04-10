@@ -3,14 +3,14 @@
 WEB ini merupakan percobaan slicing web KAI Commuter menggunakan HTML, CSS dan JavaScript (DOM)
 
 # fitur
-✅ Responsive design (desktop & mobile)
-✅ Navbar interaktif + hamburger menu
-✅ Hero section dengan animasi
-✅ Section download aplikasi
-✅ Carousel produk C-Corner (infinite loop) 
-✅ Footer lengkap & responsive
-✅ Scroll to top button
-✅ Notifikasi sederhana (toast)
+- Responsive design (desktop & mobile)
+- Navbar interaktif + hamburger menu
+- Hero section dengan animasi
+- Section download aplikasi
+- Carousel produk C-Corner (infinite loop) 
+- Footer lengkap & responsive
+ Scroll to top button
+- Notifikasi sederhana (toast)
 
 ---
 # SCREENSHOT
@@ -47,6 +47,6 @@ WEB ini merupakan percobaan slicing web KAI Commuter menggunakan HTML, CSS dan J
 # Tujuan
 Project ini dibuat untuk:
 
-Melatih kemampuan frontend (HTML, CSS, JS)
-Memahami responsive design
-Sebagai portfolio pribadi
+- Melatih kemampuan frontend (HTML, CSS, JS)
+- Memahami responsive design
+- Sebagai portfolio pribadi
